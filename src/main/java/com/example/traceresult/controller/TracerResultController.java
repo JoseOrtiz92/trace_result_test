@@ -2,7 +2,7 @@ package com.example.traceresult.controller;
 
 import com.example.traceresult.model.dto.ErrorResponse;
 import com.example.traceresult.model.dto.TracerDTO;
-import com.example.traceresult.service.Tracer;
+import com.example.traceresult.service.TracerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -19,14 +19,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 
+/**
+ * The type Tracer result controller.
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "v1")
 public class TracerResultController {
 
+    /**
+     * The Tracer service.
+     */
     @Autowired
-    private Tracer tracerService;
+    public TracerService tracerService;
 
+    /**
+     * Trace result.
+     *
+     * @param result the result
+     * @return TracerDTO
+     */
     @Operation(description = "Endpoint para tracear un resultado",
             summary = "Tracea un resultado",
             responses = {
