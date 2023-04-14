@@ -2,7 +2,6 @@ package com.example.traceresult.service.impl;
 
 import com.example.traceresult.model.dto.TracerDTO;
 import com.example.traceresult.service.TracerService;
-import com.example.traceresult.util.Constants;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,6 +25,6 @@ class TracerServiceImplTest {
         TracerDTO response = tracerService.trace(BigDecimal.TEN);
 
         assertNotNull(response);
-        assertEquals(response.getResponse(), Constants.RESULT.concat(BigDecimal.TEN.toString()));
+        assertEquals(response.getResult(), BigDecimal.TEN.toString());
     }
 }

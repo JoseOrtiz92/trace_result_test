@@ -29,12 +29,12 @@ class TracerServiceResultControllerTest {
 
     @Test
     void getTracer() {
-        TracerDTO responseDTO = TracerDTO.builder().response("test").build();
+        TracerDTO responseDTO = TracerDTO.builder().result("test").build();
         when(tracerService.trace(any(BigDecimal.class))).thenReturn(responseDTO);
 
         ResponseEntity<TracerDTO> response = tracerResultController.getTracer(BigDecimal.TEN);
 
         assertNotNull(response);
-        assertEquals(responseDTO.getResponse(), response.getBody().getResponse());
+        assertEquals(responseDTO.getResult(), response.getBody().getResult());
     }
 }

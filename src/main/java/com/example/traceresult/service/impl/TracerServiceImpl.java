@@ -3,7 +3,6 @@ package com.example.traceresult.service.impl;
 
 import com.example.traceresult.model.dto.TracerDTO;
 import com.example.traceresult.service.TracerService;
-import com.example.traceresult.util.Constants;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -16,7 +15,7 @@ public class TracerServiceImpl implements TracerService {
 
     @Override
     public TracerDTO trace(final BigDecimal result ) {
-        return TracerDTO.builder().response(Constants.RESULT.concat(result.toString())).build();
+        return TracerDTO.builder().result(result.toString()).build();
     }
 
 }
